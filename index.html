@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jiraphong Khuansam | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 10%;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* General Sections */
+        section {
+            padding: 50px 10%;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            max-width: 750px;
+            color: #666;
+        }
+
+        /* Home */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-img {
+            width: 260px;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #eee;
+        }
+
+        .hero-text h1 {
+            font-size: 40px;
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .hero-text h3 {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            color: #666;
+            max-width: 500px;
+        }
+
+        /* About */
+        .info {
+            margin-top: 15px;
+        }
+
+        .info p {
+            margin-bottom: 6px;
+        }
+
+        /* Experience & Skills */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .card p,
+        .card li {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Experience Items */
+        .experience-type {
+            display: inline-block;
+            font-size: 11px;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 4px 9px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .experience-item h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            font-size: 12px !important;
+            color: #888 !important;
+            margin-bottom: 8px;
+        }
+
+        .experience-item p {
+            font-size: 13px;
+        }
+
+        .card hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 18px 0;
+        }
+
+        /* Technical Skills Tags */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            padding: 7px 14px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: #fafafa;
+            color: #444;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Competencies */
+        .competencies-list {
+            padding-left: 20px;
+        }
+
+        /* Contact */
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            section {
+                padding: 40px 7%;
+            }
+
+            .hero {
+                min-height: auto;
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+                padding-top: 45px;
+                padding-bottom: 45px;
+            }
+
+            .profile-img {
+                width: 220px;
+                height: 260px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">JIRAPHONG.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+
+        <img src="images/profile.jpg"
+             alt="Jiraphong Khuansam"
+             class="profile-img">
+
+        <div class="hero-text">
+            <h3>Hello, I'm</h3>
+
+            <h1>Jiraphong Khuansam</h1>
+
+            <p>
+                Data Science Student at the University of Phayao.
+                Interested in programming, data analysis,
+                and new technologies.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="content">
+
+            <p>
+                My nickname is Pluem. I am a second-year
+                Data Science student at the University of Phayao.
+                I enjoy learning about technology, programming,
+                and data analysis. My goal is to become a Data Scientist.
+            </p>
+
+            <div class="info">
+                <p><strong>Name:</strong> Jiraphong Khuansam</p>
+                <p><strong>Nickname:</strong> Pluem</p>
+                <p><strong>University:</strong> University of Phayao</p>
+                <p><strong>Major:</strong> Data Science</p>
+                <p><strong>Year:</strong> Second Year</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience & Skills -->
+    <section id="experience">
+
+        <h2 class="section-title">Experience & Skills</h2>
+
+        <div class="experience-grid">
+
+            <!-- Experience -->
+            <div class="card">
+                <h3>Experience</h3>
+
+                <div class="experience-item">
+                    <span class="experience-type">
+                        Certificate of Participation
+                    </span>
+
+                    <h4>Flowchart-to-Code Alignment Verifier</h4>
+
+                    <p class="experience-date">
+                        July 19, 2026
+                    </p>
+
+                    <p>
+                        Participated in an activity focused on
+                        understanding flowcharts and evaluating
+                        their alignment with programming code.
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="experience-item">
+                    <span class="experience-type">
+                        Certificate of Participation
+                    </span>
+
+                    <h4>Amazon Quick Training</h4>
+
+                    <p class="experience-date">
+                        October 2026 | AI FOR ALL HACKATHON 2026
+                    </p>
+
+                    <p>
+                        Participated in Amazon Quick training under
+                        the AI FOR ALL HACKATHON 2026 project, gaining
+                        knowledge and practical skills in AI technology
+                        and its applications.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="card">
+                <h3>Technical Skills</h3>
+
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>R Programming</li>
+                    <li>SQL</li>
+                    <li>Power BI</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Competencies -->
+        <div class="card">
+            <h3>Personal Competencies</h3>
+
+            <ul class="competencies-list">
+                <li>Analytical Thinking</li>
+                <li>Problem-Solving</li>
+                <li>Critical Thinking</li>
+                <li>Self-Learning</li>
+                <li>Teamwork</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies">
+
+        <h2 class="section-title">Hobbies & Interests</h2>
+
+        <div class="content">
+            <ul>
+                <li>Learning new technologies</li>
+                <li>Exploring Data Science and AI</li>
+                <li>Practicing programming</li>
+                <li>Playing computer games</li>
+                <li>Exploring software and digital tools</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="content contact">
+
+            <p>
+                Email:
+                <a href="mailto:jiraphongbut@gmail.com">
+                    jiraphongbut@gmail.com
+                </a>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/jiraphongg" target="_blank">
+                    github.com/jiraphongg
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Jiraphong Khuansam. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
